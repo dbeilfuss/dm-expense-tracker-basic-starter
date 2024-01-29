@@ -7,4 +7,8 @@
 
 import Foundation
 
-
+struct Expense {
+    let title: String
+    let category: String
+    let amount: Double
+}
