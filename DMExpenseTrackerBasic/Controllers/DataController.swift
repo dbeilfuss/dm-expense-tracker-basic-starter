@@ -15,7 +15,7 @@ struct DataController {
         Expense(title: "Movie", category: "Entertainment", amount: 37.98),
         Expense(title: "Amazon", category: "Shopping", amount: 45.99),
         Expense(title: "Nike Shoes", category: "Shoes", amount: 120.67),
-        Expense(title: "Tithe", category: "Tithe", amount: 200),
+        Expense(title: "Tithe", category: "Donations", amount: 200),
         Expense(title: "Home Depot", category: "Home", amount: 75.1),
         Expense(title: "Monthly Rent", category: "Housing", amount: 1000.0),
         Expense(title: "Cab Ride", category: "Transportation", amount: 20.0),
@@ -32,7 +32,7 @@ struct DataController {
         Expense(title: "Amazon", category: "Shopping", amount: 75.0),
         Expense(title: "Haircut", category: "Personal Care", amount: 30.0),
         Expense(title: "Grocery Store", category: "Food", amount: 150.0),
-        Expense(title: "Tithe", category: "Tithe", amount: 200),
+        Expense(title: "Tithe", category: "Donations", amount: 200),
         Expense(title: "Gym", category: "Health", amount: 40.0),
         Expense(title: "Starbucks", category: "Food", amount: 5.4),
         Expense(title: "Pharmacy", category: "Health", amount: 43.0),
@@ -87,14 +87,35 @@ struct DataController {
     }
     
     func getCategories() -> [String] {
+        
         var categoryList = [String()]
+        
         for expense in expenseList {
             if categoryList.contains(expense.category) {
             } else {
                 categoryList.append(expense.category)
             }
         }
+        
+        categoryList = categoryList.sorted()
+        categoryList.removeFirst()
+        
         return categoryList
+    }
+    
+    func totalExpenses(_ category: String) -> Double {
+        
+        let expenses: [Expense] = getExpenses(category)
+        
+        let totalExpenses: Double = {
+            var addend: Double = 0
+            for expense in expenses {
+                addend += expense.amount
+            }
+            return addend
+        }()
+        
+        return totalExpenses
     }
     
 }

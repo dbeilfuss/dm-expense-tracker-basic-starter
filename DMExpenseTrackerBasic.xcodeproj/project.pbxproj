@@ -22,6 +22,7 @@
 		777281AF2B672581009AAE98 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777281AE2B672581009AAE98 /* CategoryCell.swift */; };
 		777281B22B680783009AAE98 /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777281B02B680783009AAE98 /* ExpenseCell.swift */; };
 		777281B32B680783009AAE98 /* ExpenseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 777281B12B680783009AAE98 /* ExpenseCell.xib */; };
+		777281B52B681D3F009AAE98 /* CurrencyToStringConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777281B42B681D3F009AAE98 /* CurrencyToStringConversion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		777281AE2B672581009AAE98 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		777281B02B680783009AAE98 /* ExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
 		777281B12B680783009AAE98 /* ExpenseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseCell.xib; sourceTree = "<group>"; };
+		777281B42B681D3F009AAE98 /* CurrencyToStringConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyToStringConversion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				634F022229D4A3260051300B /* Constants.swift */,
+				777281B42B681D3F009AAE98 /* CurrencyToStringConversion.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				777281B52B681D3F009AAE98 /* CurrencyToStringConversion.swift in Sources */,
 				636B782129D28B8300330E0B /* Expense.swift in Sources */,
 				6339BF5F29D391BB000DC825 /* ExpensesViewController.swift in Sources */,
 				636B780E29D2894700330E0B /* CategoriesViewController.swift in Sources */,

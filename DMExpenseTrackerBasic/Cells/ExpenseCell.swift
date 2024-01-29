@@ -14,11 +14,7 @@ class ExpenseCell: UITableViewCell {
     
     func configureCell(title: String, amount: Double) {
         titleLabel.text = title
-        amountLabel.text = String(amount)
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
+        amountLabel.text = CurrencyToStringConversion.convert(amount)
     }
     
 }

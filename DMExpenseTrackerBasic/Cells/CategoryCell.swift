@@ -9,8 +9,4 @@ import UIKit
 
 class CategoryCell: UITableViewCell {
     
-//    func set(expense: Expense) {
-//
-//    }
-    
 }

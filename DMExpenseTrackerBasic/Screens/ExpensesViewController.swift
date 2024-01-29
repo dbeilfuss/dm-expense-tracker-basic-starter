@@ -9,6 +9,9 @@ import UIKit
 
 class ExpensesViewController: UIViewController {
     
+    
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var expensesTableView: UITableView!
     
     var dataController = DataController()
@@ -23,13 +26,23 @@ class ExpensesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initializeLabels()
         initializeTable()
+    }
+    
+    func initializeLabels() {
+        categoryLabel.text = category
+        
+        let totalExpenses: Double = dataController.totalExpenses(category)
+        let stringExpenses: String = CurrencyToStringConversion.convert(totalExpenses)
+        summaryLabel.text = "You spent \(stringExpenses) on \(category)."
     }
     
     func initializeTable() {
         expensesTableView.dataSource = self
         expensesTableView.register(UINib(nibName: "ExpenseCell", bundle: nil), forCellReuseIdentifier: Constants.expenseReuseID)
     }
+
 }
 
 //MARK: - Extension: TableViewDatasource

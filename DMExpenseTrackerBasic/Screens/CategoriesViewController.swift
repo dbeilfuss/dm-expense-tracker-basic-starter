@@ -24,13 +24,10 @@ class CategoriesViewController: UIViewController {
     
     func initializeExpenseData() {
         categories = dataController.getCategories()
-        categories = categories.sorted()
-        categories.removeFirst()
     }
     
     func initializeTable() {
         categoriesTableView.dataSource = self
-//        categoriesTableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.categoryReuseID)
         categoriesTableView.delegate = self
     }
     
@@ -58,7 +55,7 @@ extension CategoriesViewController: UITableViewDataSource {
     }
 }
 
-//MARK: - Extension: TableView Delegate
+//MARK: - Extension: TableViewDelegate
 
 extension CategoriesViewController: UITableViewDelegate {
     
