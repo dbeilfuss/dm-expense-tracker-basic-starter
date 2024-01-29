@@ -8,6 +8,10 @@
 import Foundation
 
 enum Constants {
-    static let categoryReuseID = "CategoryCell"
-    static let expenseReuseID = "ExpenseCell"
+    static let categoryReuseID = "categoryCell"
+    static let expenseReuseID = "expenseCell"
+}
+
+enum Segues {
+    static let categoriesToExpenses = "categoriesToExpenses"
 }

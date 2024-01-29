@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2iP-8O-6ZG">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,14 +16,96 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KVd-Ux-eN4">
+                                <rect key="frame" x="0.0" y="91" width="390" height="719"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="categoryCell" id="WHv-aF-atj" customClass="CategoryCell" customModule="DMExpenseTrackerBasic" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WHv-aF-atj" id="ggH-Ih-wqa">
+                                            <rect key="frame" x="0.0" y="0.0" width="359.66666666666669" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KVd-Ux-eN4" secondAttribute="trailing" id="9o6-pe-1zT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KVd-Ux-eN4" secondAttribute="bottom" id="QkY-zY-2aW"/>
+                            <constraint firstItem="KVd-Ux-eN4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wW2-cb-tjf"/>
+                            <constraint firstItem="KVd-Ux-eN4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yTd-zu-PxG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="i09-LN-tfy"/>
+                    <connections>
+                        <outlet property="categoriesTableView" destination="KVd-Ux-eN4" id="hET-yv-iVM"/>
+                        <segue destination="QTn-m3-jQr" kind="show" identifier="categoriesToExpenses" id="eYT-de-Cxy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="725" y="-65"/>
+            <point key="canvasLocation" x="1650.7692307692307" y="-65.402843601895725"/>
+        </scene>
+        <!--Expenses View Controller-->
+        <scene sceneID="8lj-b5-hVI">
+            <objects>
+                <viewController id="QTn-m3-jQr" customClass="ExpensesViewController" customModule="DMExpenseTrackerBasic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CHI-zM-pNc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RQ1-qI-se9">
+                                <rect key="frame" x="0.0" y="91" width="390" height="719"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="expenseCell" id="TNW-j3-lPf" customClass="ExpenseCell" customModule="DMExpenseTrackerBasic" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TNW-j3-lPf" id="0PG-AP-adY">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iSo-8g-vg1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iSo-8g-vg1" firstAttribute="bottom" secondItem="RQ1-qI-se9" secondAttribute="bottom" id="9Ag-FR-0Bl"/>
+                            <constraint firstItem="RQ1-qI-se9" firstAttribute="leading" secondItem="iSo-8g-vg1" secondAttribute="leading" id="Zs9-sq-o8Y"/>
+                            <constraint firstItem="iSo-8g-vg1" firstAttribute="trailing" secondItem="RQ1-qI-se9" secondAttribute="trailing" id="erK-zv-OZD"/>
+                            <constraint firstItem="RQ1-qI-se9" firstAttribute="top" secondItem="iSo-8g-vg1" secondAttribute="top" id="pfO-3Z-4c8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="AQU-Rc-1mR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DtG-2D-9Vw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2512" y="-65"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qgt-8W-eiK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2iP-8O-6ZG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="D5q-Ri-aJe">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2QL-Zm-I4V"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g87-JH-Sw5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724.61538461538464" y="-65.402843601895725"/>
         </scene>
     </scenes>
     <resources>
