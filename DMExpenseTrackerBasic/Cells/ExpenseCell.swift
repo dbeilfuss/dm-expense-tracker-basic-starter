@@ -2,15 +2,18 @@
 //  ExpenseCell.swift
 //  DMExpenseTrackerBasic
 //
-//  Created by David Ruvinskiy on 3/28/23.
+//  Created by Daniel Beilfuss on 1/29/24.
 //
 
 import UIKit
 
 class ExpenseCell: UITableViewCell {
+
+    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
-//    func set(expense: Expense) {
-//
-//    }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
     
 }

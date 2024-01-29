@@ -9,8 +9,10 @@ import UIKit
 
 class ExpensesViewController: UIViewController {
     
-    func configureViewController() {
-        
+    var category: String?
+    
+    func configureViewController(category: String) {
+        self.category = category
     }
     
     override func viewDidLoad() {
