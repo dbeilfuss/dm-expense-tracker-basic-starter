@@ -9,8 +9,13 @@ import UIKit
 
 class ExpenseCell: UITableViewCell {
 
-    @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
+    
+    func configureCell(title: String, amount: Double) {
+        titleLabel.text = title
+        amountLabel.text = String(amount)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

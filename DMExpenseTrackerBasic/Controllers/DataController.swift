@@ -81,8 +81,9 @@ struct DataController {
         Expense(title: "Custom T-shirt Printing", category: "Shopping", amount: 75.0)
     ]
     
-    func getExpenses() -> [Expense] {
-        return expenseList
+    func getExpenses(_ categorySelected: String) -> [Expense] {
+        let filteredExpenseList: [Expense] = expenseList.filter { $0.category == categorySelected }
+        return filteredExpenseList
     }
     
     func getCategories() -> [String] {

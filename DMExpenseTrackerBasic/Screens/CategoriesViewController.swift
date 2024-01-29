@@ -30,13 +30,9 @@ class CategoriesViewController: UIViewController {
     
     func initializeTable() {
         categoriesTableView.dataSource = self
-        categoriesTableView.register(UITableViewCell.self, forCellReuseIdentifier: "budgetCell")
+//        categoriesTableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.categoryReuseID)
         categoriesTableView.delegate = self
     }
-    
-//    func configureTableView() {
-//        
-//    }
     
 }
 
